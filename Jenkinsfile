@@ -1,8 +1,9 @@
 pipeline {
-    agent any
+	agent none
 
     stages {
         stage('Build') {
+		agent { label 'win01' }
             steps {
                 echo 'Building..'
 				bat "dotnet build"
@@ -10,12 +11,12 @@ pipeline {
         }
         stage('Test') {
             steps {
-                echo 'Testing.....12...'
+                echo 'Testing..'
             }
         }
         stage('Deploy') {
             steps {
-                echo 'Deploying.....'
+                echo 'Deploying....'
             }
         }
     }
