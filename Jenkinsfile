@@ -7,7 +7,9 @@ pipeline {
             steps {
                 echo 'Building..'
 				bat "dotnet build"
-		    stash name: "exe", includes: "c:\\jenkins01\\workspace\\test_01_multi_tloy1966-patch-1\\Jenkins_Test_01\\bin\\Debug\\*"
+		    dir('c:\\jenkins01\\workspace\\test_01_multi_tloy1966-patch-1\\Jenkins_Test_01\\bin\\Debug\\'){
+    			stash name: 'exe' includes:'*.exe'
+			}
             }
         }
         stage('Test') {
@@ -20,7 +22,9 @@ pipeline {
 		agent { label 'win02' }
             steps {
                 echo 'Deploying....'
-		unstash name: "exe"
+		    dir('c:\\jenkins01\\workspace\\test_01_multi_tloy1966-patch-1\\Jenkins_Test_01\\bin\\Debug\\'){
+    			unstash name: 'exe'
+			}
             }
         }
     }
