@@ -6,9 +6,9 @@ pipeline {
 		agent { label 'win01' }
             steps {
                 echo 'Building..'
-				bat "dotnet build"
-		    dir('c:\\jenkins01\\workspace\\test_01_multi_tloy1966-patch-1\\Jenkins_Test_01\\bin\\Debug\\'){
-    			stash name: 'exe' includes:'*.exe'
+		bat "dotnet build"
+		dir('c:\\jenkins01\\workspace\\test_01_multi_tloy1966-patch-1\\Jenkins_Test_01\\bin\\Debug\\'){
+    			stash name: 'exe', includes:'*.exe'
 			}
             }
         }
