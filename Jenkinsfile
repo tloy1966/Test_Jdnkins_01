@@ -7,7 +7,7 @@ pipeline {
             steps {
                 echo 'Building..'
 				bat "dotnet build"
-		    stash name: "exe", includes: "bin\Debug\*"
+		    stash name: "exe", includes: "bin/Debug/*"
             }
         }
         stage('Test') {
