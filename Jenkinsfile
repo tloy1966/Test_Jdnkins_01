@@ -1,6 +1,13 @@
 pipeline {
     agent any
-
+    options {
+  	retry(3)
+        disableConcurrentBuilds()
+    }
+    tools {
+	msbuild 'MS4.0'
+    }
+	
     stages {
         stage('Build') {
             steps {
