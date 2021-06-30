@@ -1,10 +1,13 @@
 pipeline {
     agent any
     options {
-  	retry(3)
-        disableConcurrentBuilds()
+  		retry(3)
+		disableConcurrentBuilds()
     }
-	
+	triggers {
+			githubPush()
+	}
+
     stages {
         stage('Build') {
             steps {
