@@ -4,9 +4,6 @@ pipeline {
   		retry(3)
 		disableConcurrentBuilds()
     }
-	triggers {
-			githubPush()
-  }
     stages {
         stage('Build') {
             steps {
