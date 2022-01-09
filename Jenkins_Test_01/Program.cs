@@ -11,6 +11,8 @@ namespace Jenkins_Test_01
 		static void Main(string[] args)
 		{
 			Console.WriteLine("Initial");
+			
+			string s= "123";
 		}
 	}
 }
