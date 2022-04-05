@@ -18,14 +18,14 @@ namespace Jenkins_Test_01
 
 	public class foo1
 	{
-		public void fun1()
+		public string fun1()
 		{
-            Console.WriteLine(nameof(fun1));
+			return nameof(fun1);
 		}
 
-		public void fun1()
+		public void fun2()
 		{
-			Console.WriteLine(nameof(fun1));
+			Console.WriteLine(nameof(fun2));
 		}
 	}
 }
